@@ -29,7 +29,7 @@
       right: 16px;
       z-index: 9999;
       padding: 8px 14px;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       color: #fff;
       border: none;
       border-radius: 6px;
@@ -38,7 +38,7 @@
       cursor: pointer;
     }
     #fullscreen-btn:hover {
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
     }
   </style>
 </head>
@@ -58,12 +58,12 @@
       const iframe = document.getElementById('app-frame');
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen().catch((err) => {
-          console.error('Fullscreen failed:', err.message);
+          console.error('Error attempting to enable full-screen mode:', err.message);
         });
       }
     }
 
-    // Hide the button once fullscreen is active
+    // Automatically hide the button when fullscreen is active
     document.addEventListener('fullscreenchange', () => {
       const btn = document.getElementById('fullscreen-btn');
       btn.style.display = document.fullscreenElement ? 'none' : 'block';
